@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div id="app">
+      <div id="player-container">
+        <div id="0-player" class="player">
+        <div class="player-name">Player 1</div>
+        <button data-nameChange>Change</button>
+      </div>
+      <div id="1-player" class="player">
+        <div class="player-name">Player 2</div>
+        <button data-nameChange>Change</button>
+      </div>
+      </div>
+      <button id="start-button">Start</button>
+      <div id="game-container" style="display: flex; flex-wrap :wrap; width: 700px; height: 700px;" >
+        <div id="space-0" data-gameSpace style='display:flex; justify-content: center; align-items: center; min-width: 200px; min-height: 200px; border:black solid 2px; border-top:none; border-left:none;'></div>
+        <div id="space-1" data-gameSpace style='display:flex; justify-content: center; align-items: center; min-width: 200px; min-height: 200px; border:black solid 2px; border-top:none;'></div>
+        <div id="space-2" data-gameSpace style='display:flex; justify-content: center; align-items: center; min-width: 200px; min-height: 200px; border:black solid 2px; border-top:none; border-right: none;'></div>
+        <div id="space-3" data-gameSpace style='display:flex; justify-content: center; align-items: center; min-width: 200px; min-height: 200px; border:black solid 2px; border-left:none;'></div>
+        <div id="space-4" data-gameSpace style='display:flex; justify-content: center; align-items: center; min-width: 200px; min-height: 200px; border:black solid 2px;'></div>
+        <div id="space-5" data-gameSpace style='display:flex; justify-content: center; align-items: center; min-width: 200px; min-height: 200px; border:black solid 2px; border-right:none;'></div>
+        <div id="space-6" data-gameSpace style='display:flex; justify-content: center; align-items: center; min-width: 200px; min-height: 200px; border:black solid 2px; border-bottom: none; border-left:none;'></div>
+        <div id="space-7" data-gameSpace style='display:flex; justify-content: center; align-items: center; min-width: 200px; min-height: 200px; border:black solid 2px; border-bottom: none;'></div>
+        <div id="space-8" data-gameSpace style='display:flex; justify-content: center; align-items: center; min-width: 200px; min-height: 200px; border:black solid 2px; border-bottom: none; border-right: none;'></div>
+      </div>
+    </div>
+    
+    <script src="./main.js" async defer></script>
+  </body>
+</html>

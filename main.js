@@ -11,9 +11,9 @@ const Player = (name, symbol) => {
   return {getSymbol, getName, setTurn, getTurn}
 }
 
-// Game board IFFE, immidiately invoked, gameboard Obj created;
+// GameBoard Module immidiately invoked, gameboard Obj created;
 const GameBoard = (() => {
-  let spaces = new Array(9);
+  let spaces = [];
   let playerArray = [];
 
   // fill default player array 
@@ -24,7 +24,7 @@ const GameBoard = (() => {
 
   reset = () => {
     console.log("game board reset")
-    spaces = new Array(9);
+    spaces = [];
     ViewController.updateView(spaces);
   }
 
@@ -90,6 +90,7 @@ const GameController = (() => {
     if(!isRunning){
      GameBoard.getPlayerArray()[0].setTurn(true)
      isRunning = true;
+     winState = false;
     }
     else{
       console.log('game already in progress')
@@ -213,18 +214,32 @@ const ViewController = (() => {
     }
   }
 
-
-  updateView = (array) => {
-    console.log("view updated")
-    array.forEach((space, index) => {
-      let spaceContainer = document.querySelector(`#space-${index}`);
-      if(space){
-       spaceContainer.innerText = space; 
-      }else{
-        spaceContainer.innerText = "";
+  resetGameBoardView = () => {
+    let spaceContainer = document.querySelector("#game-container");
+      for (let i = 0; i < spaceContainer.children.length; i++){
+        let child = spaceContainer.children[i];
+        child.innerText = "";
       }
-      
+  }
+
+  updateGameBoardView = (arr) => {
+    arr.forEach((space, index) => {
+      let spaceText = document.querySelector(`#space-${index}`);
+      if(space){
+        spaceText.innerText = space; 
+      }else{
+        spaceText.innerText = "";
+      }
     })
+  } 
+
+// takes arr of spaces containing "X", "O", or empty index;
+  updateView = (arr) => {
+    if(arr.length){
+      updateGameBoardView(arr)
+    }else{
+      resetGameBoardView();
+    }
   }
 
   winView = (array) => {
